@@ -79,4 +79,10 @@ prob += 3*(1-x["Ostras"]) <= x["Langosta"] + x["Gamba"] + x["Pulpo"]
 prob += x["Corvina"] + x["Tilapia"] <= 1
 
 
+# Suma 
+
+a=56
+b= 32 
+suma= a+b 
+print(suma)
 
