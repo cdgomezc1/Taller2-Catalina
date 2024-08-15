@@ -25,7 +25,7 @@ P_i = {i:[dataframe['Corte'][j]for j in range (len(dataframe)) if dataframe['Tip
 
 costos = pd.read_excel(file_name,sheet_name='Tabla 1.1', index_col=1)
 
-costo_por_corte= {m:costos["Costo"][m] for m in M}
+costo_por_corte= {m:costos["viviana"][m] for m in M}
 
 
 # -------------------------------------
@@ -87,17 +87,4 @@ prob += x["Corvina"] + x["Atún"] >= 1
 # -----------------------------
    
 prob += lp.lpSum(x[m] * costo_por_corte[m] for m in M)
-
-# -----------------------------
-# Invocar el optimizador
-# -----------------------------
-
-prob.solve()
-prob.solve()
-print("El estatus es: " + lp.LpStatus[prob.status])
-print(f'El objetivo es: {lp.value(prob.objective)}')
-
-for i in M:
-    if x[i].varValue ==1 :
-        print(x[i])
 
