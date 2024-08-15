@@ -78,13 +78,5 @@ prob += 3*(1-x["Ostras"]) <= x["Langosta"] + x["Gamba"] + x["Pulpo"]
 #No se puede pedir corvina y tilapia contemporáneamente
 prob += x["Corvina"] + x["Tilapia"] <= 1
 
-#Se debe pedir corvina o atún
-prob += x["Corvina"] + x["Atún"] >= 1
 
-
-# -----------------------------
-# Función objetivo
-# -----------------------------
-   
-prob += lp.lpSum(x[m] * costo_por_corte[m] for m in M)
 
